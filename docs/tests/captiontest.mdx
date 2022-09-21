@@ -1,0 +1,34 @@
+---
+draft: true
+hide_table_of_contents: true
+hide_title: false
+images:
+keywords: [test]
+sidebar_label: Test Captions
+title: Test Captions
+---
+
+import GalleryCaption, {ENUMS as CAP_ENUMS} from '../../src/components/galleries/GalleryCaption';
+import GalleryImage, {ENUMS as IMG_ENUMS} from '../../src/components/galleries/GalleryImage';
+
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.FILL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>fill snap</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.FULL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>full snap</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.INLINE}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>inline snap</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.SCROLL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>scroll snap</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.LEFT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>split left snap</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.RIGHT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>split right snap</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.WINDOW}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>window snap</GalleryCaption>
+</GalleryImage>

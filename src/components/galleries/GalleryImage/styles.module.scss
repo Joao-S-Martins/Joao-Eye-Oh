@@ -1,0 +1,141 @@
+.capWrap {
+  /** Credit: https://css-tricks.com/css-variables-calc-rgb-enforcing-high-contrast-colors **/
+  // --red: 255;
+  // --green: 255;
+  // --blue: 255;
+  // --accessible-color: calc(((((var(--red) * 299) + (var(--green) * 587) + (var(--blue) * 114)) / 1000) - 128) * -1000);
+  // color: rgba(var(--accessible-color), var(--accessible-color), var(--accessible-color), 1);
+  // background-color: rgba(var(--red), var(--green), var(--blue), 0.6);
+  /***/
+
+  // border-radius: 1em;
+  // left: 5%;
+  // padding: 1em;
+  // position: absolute;
+  // top: 10%;
+  // font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  &Inline, &Fill, &Full, &Scroll, &Window {
+    @extend .capWrap;
+  }
+  &LeftLandscape, &LeftSquare, &LeftPortrait {
+    // background-color: rgba(220, 220, 220, 1);
+    // border-radius: 0em;
+    display: inline-block;
+    height: 100vh;
+    margin: 0;
+    // padding: 1em;
+    width: 50%;
+  }
+  &RightLandscape, &RightSquare, &RightPortrait {
+    @extend .capWrapLeftLandscape;
+    position: absolute;
+  }
+}
+
+.figure {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-flex;
+  margin: 0;
+  position: relative;
+  &Inline {
+    @extend .figure;
+  }
+  &Fill {
+    @extend .figure;
+    width: 100%;
+  }
+  &Full {
+    @extend .figureFill;
+    background-size: 100%;
+  }
+  &LeftLandscape, &LeftSquare {
+    @extend .figureFill;
+    background-position-x: -25vw;
+  }
+  &LeftPortrait {
+    @extend .figureLeftLandscape;
+    background-position-y: -50vh;
+  }
+  &RightLandscape, &RightSquare {
+    @extend .figureFill;
+    background-position-x: 25vw;
+  }
+  &RightPortrait {
+    @extend .figureRightLandscape;
+    background-position-y: -50vh;
+  }
+  &Scroll {
+    @extend .figureFill;
+    background-attachment: fixed;
+  }
+  &Window {
+    @extend .figureScroll;
+  }
+}
+
+.img {
+  visibility: hidden;
+  &Inline {
+    @extend .img;
+  }
+  &Fill {
+    @extend .imgFull;
+    height: 100vh;
+  }
+  &Full {
+    @extend .img;
+    width: 100%;
+  }
+  &LeftLandscape, &LeftPortrait, &LeftSquare, &RightLandscape, &RightPortrait, &RightSquare {
+    @extend .img;
+    height: 100vh;
+    width: 50%;
+  }
+  &Scroll {
+    @extend .imgFill;
+  }
+  &Window {
+    @extend .imgScroll;
+    height: 40vh; // TODO (joao) Make this a prop on Scroll variants
+  }
+}
+
+.vid {
+  display: block;
+  // margin: auto;
+  object-fit: cover;
+  &Inline {
+    @extend .vid;
+  }
+  &Fill {
+    @extend .vidFull;
+    height: 100vh;
+  }
+  &Full {
+    @extend .vid;
+    width: 100%;
+  }
+  &LeftLandscape, &LeftPortrait, &LeftSquare,  {
+    @extend .vid;
+    height: 100vh;
+    width: 50%;
+  }
+  &RightLandscape, &RightPortrait, &RightSquare {
+    @extend .vidLeftLandscape;
+    margin-left: 50%;
+  }
+  &Scroll {
+    @extend .vidFill;
+    // left: 0;
+    // top: 0;
+    // position: fixed;
+    // width: 100%;
+    // z-index: -20;
+  }
+  &Window {
+    @extend .vidScroll;
+    height: 40vh; // TODO (joao) Make this a prop on Scroll variants
+  }
+}

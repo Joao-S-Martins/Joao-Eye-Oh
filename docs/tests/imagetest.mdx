@@ -1,0 +1,55 @@
+---
+draft: true
+hide_table_of_contents: true
+hide_title: false
+images: [https://placekitten.com/640/360]
+keywords: [test]
+sidebar_label: Test Images
+title: Test Images
+---
+
+import GalleryCaption, {ENUMS as CAP_ENUMS} from '../../src/components/galleries/GalleryCaption';
+import GalleryImage, {ENUMS as IMG_ENUMS} from '../../src/components/galleries/GalleryImage';
+
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.FILL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>fill landscape</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/360/640' variant={IMG_ENUMS.VARIANTS.FILL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>fill portrait</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.FULL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>full landscape</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/360/640' variant={IMG_ENUMS.VARIANTS.FULL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>full portrait</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.INLINE}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>inline landscape</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/360/640' variant={IMG_ENUMS.VARIANTS.INLINE}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>inline portrait</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.SCROLL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>scroll landscape</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/360/640' variant={IMG_ENUMS.VARIANTS.SCROLL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>scroll portrait</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.LEFT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>split left landscape</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/360/640' variant={IMG_ENUMS.VARIANTS.LEFT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>split left portrait</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.RIGHT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>split right landscape</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/360/640' variant={IMG_ENUMS.VARIANTS.RIGHT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>split right portrait</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/640/360' variant={IMG_ENUMS.VARIANTS.WINDOW}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>window landscape</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://placekitten.com/360/640' variant={IMG_ENUMS.VARIANTS.WINDOW}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>window portrait</GalleryCaption>
+</GalleryImage>

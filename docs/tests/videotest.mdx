@@ -1,0 +1,34 @@
+---
+draft: true
+hide_table_of_contents: true
+hide_title: false
+images: [https://placekitten.com/640/360]
+keywords: [test]
+sidebar_label: Test Videos
+title: Test Videos
+---
+
+import GalleryCaption, {ENUMS as CAP_ENUMS} from '../../src/components/galleries/GalleryCaption';
+import GalleryImage, {ENUMS as IMG_ENUMS} from '../../src/components/galleries/GalleryImage';
+
+<GalleryImage alt='test' src='https://dl8.webmfiles.org/elephants-dream.webm' variant={IMG_ENUMS.VARIANTS.FILL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>video fill</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://dl8.webmfiles.org/elephants-dream.webm' variant={IMG_ENUMS.VARIANTS.FULL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>video full</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://dl8.webmfiles.org/elephants-dream.webm' variant={IMG_ENUMS.VARIANTS.INLINE}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>video inline</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://dl8.webmfiles.org/elephants-dream.webm' variant={IMG_ENUMS.VARIANTS.SCROLL}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>video scroll</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://dl8.webmfiles.org/elephants-dream.webm' variant={IMG_ENUMS.VARIANTS.LEFT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>video left</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://dl8.webmfiles.org/elephants-dream.webm' variant={IMG_ENUMS.VARIANTS.RIGHT}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>video right</GalleryCaption>
+</GalleryImage>
+<GalleryImage alt='test' src='https://dl8.webmfiles.org/elephants-dream.webm' variant={IMG_ENUMS.VARIANTS.WINDOW}>
+  <GalleryCaption variant={CAP_ENUMS.VARIANTS.SNAP}>video window</GalleryCaption>
+</GalleryImage>

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_joao_eye_oh=self.webpackChunk_joao_eye_oh||[]).push([[4543],{3035:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/pt-PT/blog/tags/hola","allTagsPath":"/pt-PT/blog/tags","count":1}')}}]);

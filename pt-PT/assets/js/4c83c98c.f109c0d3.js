@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_joao_eye_oh=self.webpackChunk_joao_eye_oh||[]).push([[7083],{5152:a=>{a.exports=JSON.parse('{"label":"docusaurus","permalink":"/pt-PT/blog/tags/docusaurus","allTagsPath":"/pt-PT/blog/tags","count":4}')}}]);

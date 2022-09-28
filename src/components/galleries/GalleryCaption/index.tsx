@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './styles.module.scss';
-import {VARIANTS} from './enums';
+import {POSITIONS, VARIANTS} from './enums';
 import React, {Component} from 'react'
 
 export default function GalleryCaption(props) {
@@ -8,7 +8,7 @@ export default function GalleryCaption(props) {
   let className = `${variant.charAt(0).toUpperCase() + variant.slice(1)}`;
 
   return (
-    <div className={clsx(position.split(' ').map(val => styles[`position${val.charAt(0).toUpperCase() + val.slice(1)}`]))}>
+    <div data-test={position} className={clsx(position.split(' ').map(val => styles[`position${val.charAt(0).toUpperCase() + val.slice(1)}`]))}>
       <figcaption data-test={variant} className={styles[`caption${className}`]}>
         {children}
       </figcaption>
@@ -17,5 +17,6 @@ export default function GalleryCaption(props) {
 }
 
 export const ENUMS = {
+  POSITIONS,
   VARIANTS
 };

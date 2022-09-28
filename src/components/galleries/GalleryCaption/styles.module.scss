@@ -16,6 +16,7 @@
   width: 100%;
   &Bottom {
     @extend .position;
+    top: calc((100% - (var(--caption-height) * 2)));
   }
   &Center {
     @extend .position;
@@ -33,5 +34,6 @@
   }
   &Top {
     @extend .position;
+    top: var(--caption-height);
   }
 }

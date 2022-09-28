@@ -29,7 +29,7 @@ This command starts a local development server and opens up a browser window. Mo
 ### Build
 
 ```
-$ npm build
+$ npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
@@ -39,10 +39,11 @@ This command generates static content into the `build` directory and can be serv
 Using SSH:
 
 ```
-$ USE_SSH=true npm deploy
+$ USE_SSH=true npm run deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+View the site at [https://joao-s-martins.github.io/Joao-Eye-Oh/][https://joao-s-martins.github.io/Joao-Eye-Oh/].
 
 ### Ideal Image
 
@@ -59,7 +60,7 @@ import thumbnail from './path/to/img.png';
 
 ## TODO
 - [ ] BUG: GalleryImage background-attachment:fixed & background-size:cover|100% calculates based on browser width, not figure width. Solution may be to set background-size:calc(100% - var(--doc-sidebar-width)|var(--doc-sidebar-hidden-width)) & background-position:right. `main.docMainContainerEnhanced_node_modules-@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module` exists when the side nav is closed.
-- [ ] Initialize repo, upload, use script to generate first Github Pages.
+- [x] Initialize repo, upload, use script to generate first Github Pages.
 - [ ] Create 3 breakpoints; -640px, 641px-996px, 997px+. Maybe fake the middle range with [`calc()`](https://css-tricks.com/using-calc-to-fake-a-media-query/)
 - [ ] Implement [fast-average-color](https://github.com/fast-average-color/fast-average-color) for default backgrounds and text or left/right caption & invert for caption background.
 - [ ] Implement [react-update-url-on-scroll](https://github.com/pvoznyuk/react-update-url-on-scroll) to add hashes to URL while scrolling, for easier sharing.

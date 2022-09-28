@@ -11,12 +11,18 @@
 }
 
 .position {
-  --caption-height: 26px;
+  --caption-height: 40px;
+  --caption-width: 180px;
+  --gap-bottom: calc(var(--caption-height) / 2);
+  --gap-left: 5%;
+  --gap-right: 5%;
+  --gap-top: calc(var(--caption-height) / 2);
   position: absolute;
   width: 100%;
   &Bottom {
     @extend .position;
-    top: calc((100% - (var(--caption-height) * 2)));
+    // top: calc((100% - (var(--caption-height) * 1.5)));
+    bottom: calc(var(--caption-height) + var(--gap-bottom));
   }
   &Center {
     @extend .position;
@@ -24,6 +30,7 @@
   }
   &Left {
     @extend .position;
+    left: var(--gap-left);
   }
   &Middle {
     @extend .position;
@@ -31,9 +38,10 @@
   }
   &Right {
     @extend .position;
+    right: calc(var(--caption-width) + var(--gap-right));
   }
   &Top {
     @extend .position;
-    top: var(--caption-height);
+    top: var(--gap-top);
   }
 }

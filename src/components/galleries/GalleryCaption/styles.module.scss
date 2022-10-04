@@ -34,7 +34,7 @@
   }
   &Middle {
     @extend .position;
-    top: calc((100% - var(--caption-height)) / 2);
+    top: calc((calc(100% - var(--vh-offset) / 2) - var(--caption-height)) / 2);
   }
   &Right {
     @extend .position;

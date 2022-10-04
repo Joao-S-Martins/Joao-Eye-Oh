@@ -11,6 +11,7 @@ title: Cardoso Vowl Renewal
 import GalleryCaption, {ENUMS as CAP_ENUMS} from '../../../../../src/components/galleries/GalleryCaption';
 import GalleryImage, {ENUMS as IMG_ENUMS} from '../../../../../src/components/galleries/GalleryImage';
 import IMGS from './img';
+import ScrollGallery from '../../../../../src/components/galleries/ScrollGallery';
 import VIDS from './vid';
 
 
@@ -40,12 +41,25 @@ import VIDS from './vid';
 <GalleryImage alt="The Martins family standing" src={IMGS[13]} variant={IMG_ENUMS.VARIANTS.FULL} />
 
 // TODO (joao) Make a scroll gallery
-<GalleryImage alt="Aliciana feeding Mia" src={IMGS[15]} variant={IMG_ENUMS.VARIANTS.SCROLL} />
-<GalleryImage alt="The Cardosos opening the large dessert table" src={IMGS[14]} variant={IMG_ENUMS.VARIANTS.SCROLL} />
-<GalleryImage alt="The Cardosos cutting the cake" src={IMGS[16]} variant={IMG_ENUMS.VARIANTS.SCROLL} />
+<ScrollGallery>
+  <GalleryImage alt="Aliciana feeding Mia" src={IMGS[15]} variant={IMG_ENUMS.VARIANTS.FILL} />
+  <GalleryImage alt="The Cardosos opening the large dessert table" src={IMGS[14]} variant={IMG_ENUMS.VARIANTS.FILL}>
+    <GalleryCaption
+      position={`${CAP_ENUMS.POSITIONS.BOTTOM} ${CAP_ENUMS.POSITIONS.CENTER}`}
+      variant={CAP_ENUMS.VARIANTS.SNAP}>
+        All of Noelia's grandkids and their spouses
+    </GalleryCaption>
+  </GalleryImage>
+  <div style={{position: 'relative'}}>All of Noelia's grandkids and their spouses</div>
+  <GalleryImage alt="The Cardosos cutting the cake" src={IMGS[16]} variant={IMG_ENUMS.VARIANTS.FILL} />
+</ScrollGallery>
 
 <GalleryImage alt="The Cardosos sharing cake" src={VIDS[1]} variant={IMG_ENUMS.VARIANTS.FILL} />
 
 <GalleryImage alt="Grandma Noelia surrounded by her grandchildren" src={IMGS[17]} variant={IMG_ENUMS.VARIANTS.FULL}>
-  <GalleryCaption position={`${CAP_ENUMS.POSITIONS.BOTTOM} ${CAP_ENUMS.POSITIONS.CENTER}`} variant={CAP_ENUMS.VARIANTS.SNAP}>All of Noelia's grandkids and their spouses</GalleryCaption>
+  <GalleryCaption
+    position={`${CAP_ENUMS.POSITIONS.BOTTOM} ${CAP_ENUMS.POSITIONS.CENTER}`}
+    variant={CAP_ENUMS.VARIANTS.SNAP}>
+      All of Noelia's grandkids and their spouses
+  </GalleryCaption>
 </GalleryImage>

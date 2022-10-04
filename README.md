@@ -69,6 +69,7 @@ import thumbnail from './path/to/img.png';
 - [ ] Create caption classes with styles that mimic [Snap](https://generatestatus.com/fake-snapchat-generator-2/) and other social media as well as simple captions with positioning and [shapes](https://css-tricks.com/the-shapes-of-css/) or [speech bubbles](https://sharkcoder.com/visual/shapes#section12).
 - [ ] Update --caption-height to the [actual caption height](https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element).
 - [ ] Create hero header, maybe with [fixed video](http://jsfiddle.net/V74WH/4/).
+- [ ] Update side images to use sticky like slide gallery, and under break-point should be image over copy.
 
 
 ## References

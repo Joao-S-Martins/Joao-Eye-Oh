@@ -55,6 +55,7 @@ export default class GalleryImage extends Component {
       <figure
         className={styles[`figure${className}`]}
         data-test={`${this.state.opacity}`}
+        ref={el => this.figure = el}
         style={{backgroundImage: `url(${src})`, opacity: this.state.opacity}}>
         {src.includes('.webm', src.length -5) ?
           <video autoPlay className={styles[`vid${className}`]} loop muted preload src={src} /> :

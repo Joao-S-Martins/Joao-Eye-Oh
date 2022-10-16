@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types'
 import React, {Component, ReactDOM} from 'react'
+import GalleryCaption, {ENUMS as CAP_ENUMS} from '../GalleryCaption';
 import GalleryImage, {ENUMS} from '../GalleryImage';
 
 import styles from './styles.module.scss';
@@ -66,12 +67,19 @@ export class ScrollImage extends GalleryImage {
   }
 }
 
-export class scrollCaption {
+export class ScrollCaption extends Component {
   constructor(props) {
-    
+    super(props);
   }
 
   render() {
-    
+    const {position = CAP_ENUMS.POSITIONS.LEFT, variant = CAP_ENUMS.VARIANTS.ROUNDED} = this.props;
+    return (
+      <GalleryCaption
+        position={position}
+        variant={variant}>
+          {this.props.children}
+      </GalleryCaption>
+    );
   }
 }

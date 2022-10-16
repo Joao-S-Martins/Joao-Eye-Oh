@@ -8,5 +8,6 @@ export const POSITIONS = {
 }
 
 export const VARIANTS = {
+  ROUNDED: 'rounded',
   SNAP: 'snap'
 };

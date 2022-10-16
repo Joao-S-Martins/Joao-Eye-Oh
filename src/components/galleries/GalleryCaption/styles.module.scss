@@ -1,5 +1,11 @@
 .caption {
   padding: .4em;
+  &Rounded {
+    background: rgba(255,255,255,.6);
+    border-radius: 2em;
+    padding: 1em;
+    // width: 33%;
+  }
   &Snap {
     @extend .caption;
     width: 100%;
@@ -31,6 +37,7 @@
   &Left {
     @extend .position;
     left: var(--gap-left);
+    width: 35%;
   }
   &Middle {
     @extend .position;
@@ -38,7 +45,8 @@
   }
   &Right {
     @extend .position;
-    right: calc(var(--caption-width) + var(--gap-right));
+    right: var(--gap-right);
+    width: 35%;
   }
   &Top {
     @extend .position;

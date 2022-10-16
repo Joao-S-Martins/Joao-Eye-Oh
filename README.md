@@ -70,6 +70,8 @@ import thumbnail from './path/to/img.png';
 - [ ] Update --caption-height to the [actual caption height](https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element).
 - [ ] Create hero header, maybe with [fixed video](http://jsfiddle.net/V74WH/4/).
 - [ ] Update side images to use sticky like slide gallery, and under break-point should be image over copy.
+- [ ] Add IDs and update URL hash while scrolling.
+- [ ] BUG: ScrollGallery doesn't set alpha/zoom when loading. Becomes apparent when refreshing or resizing the page.
 
 
 ## References

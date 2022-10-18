@@ -1,0 +1,35 @@
+.grid {
+  overflow: hidden;
+}
+
+.gridItem, .gridSizer {
+  width: calc((100% - var(--gallery-img-margin)*2)/3);
+}
+
+.gridItemWidth2 {
+  width: calc(64% + 7px);
+}
+// .gridItemHeight2 { height: 140px; }
+
+.gutterSizer {
+  visibility: hidden;
+  width: var(--gallery-img-margin);
+}
+
+@media screen and (min-width: 641px) and (max-width: 996px) {
+  /* 2 columns for medium screens */
+  .gridItem, .gridSizer {
+    width: calc((100% - var(--gallery-img-margin))/2);
+  }
+
+  .gridItemWidth2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* 1 column for small screens */
+  .gridItem, .gridSizer, .gridItemWidth2 {
+    width: 100%;
+  }
+}

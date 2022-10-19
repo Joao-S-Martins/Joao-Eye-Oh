@@ -20,6 +20,7 @@ export default class GalleryCaption extends Component {
 
     return (
       <div data-test={position} className={clsx(position.split(' ').map(val => styles[`position${val.charAt(0).toUpperCase() + val.slice(1)}`]))}
+        onClick={event => event.stopPropagation()}
         style={{"--caption-height": `${this.state.height}px`, "--caption-width": `${this.state.width}px`}}>
         <figcaption data-test={variant} className={styles[`caption${className}`]} ref={el => this.caption = el}>
           {children}

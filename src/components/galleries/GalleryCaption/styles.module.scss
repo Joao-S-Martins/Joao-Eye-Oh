@@ -2,7 +2,7 @@
   padding: .4em;
   &Rounded {
     background: rgba(255,255,255,.6);
-    border-radius: 2em;
+    border-radius: 1em;
     padding: 1em;
     // width: 33%;
   }
@@ -38,6 +38,9 @@
     @extend .position;
     left: var(--gap-left);
     width: 35%;
+    @media screen and (max-width: 640px) {
+      width: calc(100% - (var(--gap-left) * 2));
+    }
   }
   &Middle {
     @extend .position;
@@ -47,6 +50,9 @@
     @extend .position;
     right: var(--gap-right);
     width: 35%;
+    @media screen and (max-width: 640px) {
+      width: calc(100% - (var(--gap-right) * 2));
+    }
   }
   &Top {
     @extend .position;

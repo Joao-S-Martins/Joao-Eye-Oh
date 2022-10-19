@@ -18,11 +18,9 @@ export default function MasonryGallery(props) {
     resizeObserver.observe(ref.parentElement);
   });
 
-  const showFull = url => window.open(url);
-
   const wrap = (img, i) => {
     return (
-      <div class={`${styles.gridItem}${i===0 ? ' ' + styles.gridSizer : ''}`} key={i} onClick={() => showFull(img.props.src)}>
+      <div class={`${styles.gridItem}${i===0 ? ' ' + styles.gridSizer : ''}`} key={i}>
         {img}
       </div>
     );

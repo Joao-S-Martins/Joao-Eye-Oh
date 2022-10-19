@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import PropTypes from 'prop-types'
 import React, {Component, ReactDOM} from 'react'
 import GalleryCaption, {ENUMS as CAP_ENUMS} from '../GalleryCaption';
@@ -12,17 +11,8 @@ export class ScrollGallery extends Component {
   }
 
   render() {
-    // TODO (joao) Add function to children that makes image invisible until it reaches top:0, then increases opacity by 10 for every 1vh.
-    // TODO (joao) Add function to children that grows background-size from 100% by 0.1% per 1vh scrolled after top:0.
     return (
       <div className={styles.scrollGallery}>
-        {/* {this.props.children.map(child => {
-          return (
-            <>
-              {child}
-              <div className={styles.scrollSpace} />
-            </>)
-        })} */}
         {this.props.children}
         <div className={styles.scrollSpace} /> {/* Doubled scrollSpace for the last child */}
       </div>
@@ -34,10 +24,20 @@ export class ScrollImage extends GalleryImage {
   constructor(props) {
     super(props);
     this.state = {
-      top: NaN,
+      aspect: null,
       inView: false,
-      isFirst: false
+      isFirst: false,
+      top: NaN
     }
+  }
+
+  onClick = event => {
+    const img = event.target;
+    let src = img.src;
+    if (img.style.opacity < 0) {
+      previousElementSibling 
+    }
+    window.open(src);
   }
 
   onScroll = (el) => {
@@ -45,15 +45,33 @@ export class ScrollImage extends GalleryImage {
     const sibling = this.figure.nextElementSibling.getBoundingClientRect();
     const travel = range - sibling.top;
     if (!this.state.isFirst) { // Skip the opacity change if this if the first image in the gallery
-      this.figure.style.opacity = `${Math.max(Math.min(travel / 100, 1), 0)}`;
+      const opac = `${Math.max(Math.min(travel / 100, 1), 0)}`;
+      this.figure.style.opacity = opac;
+      if (opac !== '1') {
+        this.figure.style['pointer-events'] = 'none';
+      } else {
+        this.figure.style['pointer-events'] = 'auto';
+      }
     }
-    this.figure.style.backgroundSize = `${Math.max(Math.min(travel / 50 + 100, 110), 100)}%`;
+    const size = Math.max(Math.min(travel / 50 + 100, 110), 100);
+    this.figure.style.backgroundSize = this.state.aspect > 1 ? `${size}%` : `auto ${size}%`;
+  }
+
+  handleResize = () => {
+    const parent = this.figure.parentElement;
+    const aspect = parent.getBoundingClientRect().width / window.innerHeight;
+    this.setState({aspect});
+    this.onScroll();
   }
 
   componentDidMount(): void {
-    const isFirst = this.figure.parentElement.firstChild === this.figure;
+    const parent = this.figure.parentElement;
+    const aspect = parent.getBoundingClientRect().width / window.innerHeight;
+    const isFirst = parent.firstChild === this.figure;
+    const resizeObserver = new ResizeObserver(this.handleResize);
+    resizeObserver.observe(parent);
     window.addEventListener('scroll', this.onScroll); // TODO (joao) Centralize the scroll listener calls and debounce from ScrollGallery
-    this.setState({isFirst});
+    this.setState({aspect, isFirst});
   }
 
   render() {

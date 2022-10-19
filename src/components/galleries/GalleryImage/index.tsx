@@ -37,8 +37,14 @@ export default class GalleryImage extends Component {
     }
   }
 
+  onClick = event => this.props.onClick ? this.props.onClick(event) : this.showFull();
+
+  showFull = () => {
+    window.open(this.props.src);
+  }
+
   render() {
-    const {alt, src, variant} = this.props;
+    const {alt, src, variant = VARIANTS.INLINE} = this.props;
     const orientation = this.state.orientation || ORIENTATIONS.LANDSCAPE;
 
     const onLoad = ({target}) => {
@@ -56,6 +62,7 @@ export default class GalleryImage extends Component {
         className={styles[`figure${className}`]}
         data-test={`${this.state.opacity}`}
         ref={el => this.figure = el}
+        onClick={event => this.onClick(event)}
         style={{backgroundImage: `url(${src})`, opacity: this.state.opacity}}>
         {src.includes('.webm', src.length -5) ?
           <video autoPlay className={styles[`vid${className}`]} loop muted preload src={src} /> :

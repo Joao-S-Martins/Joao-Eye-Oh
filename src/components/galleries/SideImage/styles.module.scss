@@ -8,6 +8,8 @@
 
 .content {
   width: calc(50% - var(--gallery-img-margin));
+  display: inline-flex;
+  align-items: center;
 }
 
 .wrap {

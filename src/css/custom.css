@@ -16,12 +16,16 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
+  /*** Varaible Overrides */
+  --ifm-global-shadow-lw: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+
+  /*** Custom Variables */
   --vh-offset: 60px;
   --vw-offset: 0;
   --gallery-img-margin: 7px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/*** For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -33,4 +37,185 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/*** Utilities */
+.center {
+  text-align: center;
+}
+  
+/*** Global Styles */
+h1, h2, h3, h4, h5, h6 {
+  padding-bottom: .25em;
+}
 
+/*** Quote Styles */
+.quote {
+  display:inline-block;
+  overflow:hidden;
+}
+
+.quote blockquote {
+  background-color: #fff;
+  border: solid 2px #757575;
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  position: relative;
+}
+.quote blockquote:before {
+  background-color: #fff;
+  bottom: -10%;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: -10%;
+  transform: rotate(-15deg) skew(5deg);
+}
+.quote blockquote cite {
+  display: block;
+  font-style: italic;
+  text-align: right;
+}
+.quote blockquote cite:before {
+  content: "~ ";
+}
+.quote blockquote > * {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-border-quote {
+  display: inline-block;
+  overflow: hidden;
+}
+.animated-border-quote blockquote {
+  background-color: #fff;
+  border: solid 2px #757575;
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  position: relative;
+}
+.animated-border-quote blockquote:before {
+  animation: clockwise 30s infinite linear;
+  background-color: #fff;
+  bottom: 10%;
+  content: "";
+  left: 0;
+  opacity: .5;
+  position: absolute;
+  right: 0;
+  top: 10%;
+}
+.animated-border-quote blockquote:after {
+  animation:counter 30s infinite linear;
+  background-color: #fff;
+  bottom:10%;
+  content: "";
+  left: 0;
+  opacity:.5;
+  position: absolute;
+  right: 0;
+  top:10%;
+}
+.animated-border-quote blockquote cite {
+  display: block;
+  font-style: italic;
+  text-align: right;
+}
+.animated-border-quote blockquote cite:before {
+  content: "~ ";
+}
+.animated-border-quote blockquote > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes clockwise {
+  0% {
+    transform:rotate(0);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes counter {
+  0% {
+    transform:rotate(0);
+  }
+  100% {
+    transform:rotate(-360deg);
+  }
+}
+
+.animated-shadow-quote {
+  display: inline-block;
+  position: relative;
+}
+.animated-shadow-quote blockquote {
+  animation: shadows 2s linear infinite alternate;
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+}
+.animated-shadow-quote blockquote cite {
+  display: block;
+  font-style: italic;
+  text-align: right;
+}
+.animated-shadow-quote blockquote cite:before {
+  content: "~ ";
+}
+
+@keyframes shadows {
+  0% {
+    box-shadow:0 2px 4px -2px rgba(0,0,0,.25);
+    transform:scale(.95);
+  }
+  100% {
+    box-shadow:0 0 4px 2px rgba(0,0,0,.25);
+    transform:scale(1);
+  }
+}
+
+.square-brackets-quote {
+  display: inline-block;
+  font-family: sans-serif;
+}
+.square-brackets-quote blockquote {
+  border: solid 1em #ccc;
+  display: inline-block;
+  margin: 0;
+  padding: 1em;
+  position: relative;
+}
+.square-brackets-quote blockquote:before {
+  background-color: #fff;
+  bottom: -1em;
+  content: "";
+  left: 2em;
+  position: absolute;
+  right: 2em;
+  top: -1em;
+}
+/* .square-brackets-quote blockquote cite {
+  color:#757575;
+  display: block;
+  font-size:small;
+  font-style: normal;
+  text-align: right;
+  text-transform:uppercase;
+} */
+.square-brackets-quotee blockquote cite {
+  display: block;
+  font-style: italic;
+  text-align: right;
+}
+.square-brackets-quote blockquote cite:before {
+  content: "~ ";
+}
+.square-brackets-quote blockquote > * {
+  position: relative;
+  z-index: 1;
+}

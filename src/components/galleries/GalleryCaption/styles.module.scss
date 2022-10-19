@@ -6,7 +6,7 @@
     background: rgba(255,255,255,.6);
     border-radius: 1em;
     padding: 1em;
-    // width: 33%;
+    display: inline;
   }
   &Snap {
     @extend .caption;

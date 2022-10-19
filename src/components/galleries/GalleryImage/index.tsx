@@ -18,7 +18,6 @@ export default class GalleryImage extends Component {
     this.state = {
       imgH: 0,
       imgW: 0,
-      opacity: 100,
       orientation: '',
       zoom: 100
     };
@@ -60,10 +59,9 @@ export default class GalleryImage extends Component {
     return (
       <figure
         className={styles[`figure${className}`]}
-        data-test={`${this.state.opacity}`}
         ref={el => this.figure = el}
         onClick={event => this.onClick(event)}
-        style={{backgroundImage: `url(${src})`, opacity: this.state.opacity}}>
+        style={{backgroundImage: `url(${src})`}}>
         {src.includes('.webm', src.length -5) ?
           <video autoPlay className={styles[`vid${className}`]} loop muted preload src={src} /> :
           <img alt={alt} className={styles[`img${className}`]} data-test={`${className}, ${this.state.imgW}, ${this.state.imgH}, ${this.state.orientation}`} onLoad={onLoad} src={src} />

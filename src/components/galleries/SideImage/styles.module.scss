@@ -1,0 +1,38 @@
+.img, .vid {
+  width: 50%;
+  height: calc(100vh - var(--vh-offset));
+  object-fit: cover;
+  position: sticky;
+  top: var(--vh-offset);
+}
+
+.content {
+  width: calc(50% - var(--gallery-img-margin));
+}
+
+.wrap {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--gallery-img-margin);
+  margin: 0 0 var(--gallery-img-margin);
+  &Left {
+    @extend .wrap;
+    flex-direction: row;
+  }
+  &Right {
+    @extend .wrap;
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .img, .content, .vid {
+    width: 100%;
+    position: static;
+    flex-direction: row;
+  }
+  .wrapRight {
+    flex-direction: row;
+  }
+}

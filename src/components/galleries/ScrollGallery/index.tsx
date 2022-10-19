@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React, {Component, ReactDOM} from 'react'
+import React, {Component} from 'react'
 import GalleryCaption, {ENUMS as CAP_ENUMS} from '../GalleryCaption';
 import GalleryImage, {ENUMS} from '../GalleryImage';
 

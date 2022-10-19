@@ -1,6 +1,5 @@
 .caption {
   padding: .4em;
-  // display: inline;
   &Rounded {
     @extend .caption;
     background: rgba(255,255,255,.6);
@@ -29,7 +28,6 @@
   width: 100%;
   &Bottom {
     @extend .position;
-    // top: calc((100% - (var(--caption-height) * 1.5)));
     bottom: calc(var(--caption-height) + var(--gap-bottom));
   }
   &Center {

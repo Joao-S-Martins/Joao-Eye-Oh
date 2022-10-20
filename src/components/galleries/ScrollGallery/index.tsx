@@ -1,3 +1,4 @@
+import {addScrollListener, getAspectRatio, showFullImage} from '@site/src/clientUtils';
 import React, {Component} from 'react'
 import GalleryCaption, {ENUMS as CAP_ENUMS} from '../GalleryCaption';
 import GalleryImage, {ENUMS} from '../GalleryImage';
@@ -36,7 +37,7 @@ export class ScrollImage extends GalleryImage {
     if (img.style.opacity < 0) {
       previousElementSibling 
     }
-    window.open(src);
+    showFullImage.open(src);
   }
 
   onScroll = (el) => {
@@ -58,18 +59,18 @@ export class ScrollImage extends GalleryImage {
 
   handleResize = () => {
     const parent = this.figure.parentElement;
-    const aspect = parent.getBoundingClientRect().width / window.innerHeight;
+    const aspect = getAspectRatio(parent);
     this.setState({aspect});
     this.onScroll();
   }
 
   componentDidMount(): void {
     const parent = this.figure.parentElement;
-    const aspect = parent.getBoundingClientRect().width / window.innerHeight;
+    const aspect = getAspectRatio(parent);
     const isFirst = parent.firstChild === this.figure;
     const resizeObserver = new ResizeObserver(this.handleResize);
     resizeObserver.observe(parent);
-    window.addEventListener('scroll', this.onScroll); // TODO (joao) Centralize the scroll listener calls and debounce from ScrollGallery
+    addScrollListener(this.onScroll);
     this.setState({aspect, isFirst});
   }
 

@@ -2,6 +2,7 @@ import {VARIANTS} from './enums';
 import React, {Component} from 'react'
 
 import styles from './styles.module.scss';
+import { showFullImage } from '@site/src/clientUtils';
 
 export default class SideImage extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class SideImage extends Component {
   onClick = event => this.props.onClick ? this.props.onClick(event) : this.showFull();
 
   showFull = () => {
-    window.open(this.props.src);
+    showFullImage.open(this.props.src);
   }
 
   renderContent(variant) {

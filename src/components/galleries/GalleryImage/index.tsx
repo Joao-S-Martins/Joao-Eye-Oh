@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import React, {Component} from 'react'
 
 import styles from './styles.module.scss';
+import { showFullImage } from '@site/src/clientUtils';
 
 export default class GalleryImage extends Component {
   // static defaultProps = {
@@ -36,11 +37,7 @@ export default class GalleryImage extends Component {
     }
   }
 
-  onClick = event => this.props.onClick ? this.props.onClick(event) : this.showFull();
-
-  showFull = () => {
-    window.open(this.props.src);
-  }
+  onClick = event => this.props.onClick ? this.props.onClick(event) : showFullImage(this.props.src);
 
   render() {
     const {alt, src, variant = VARIANTS.INLINE} = this.props;

@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import {ORIENTATIONS, VARIANTS} from './enums';
 import PropTypes from 'prop-types'
 import React, {Component} from 'react'

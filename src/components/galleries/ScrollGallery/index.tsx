@@ -1,4 +1,4 @@
-import {addScrollListener, getAspectRatio, showFullImage} from '@site/src/clientUtils';
+import {addScrollListener, getAspectRatio, getClientHeight, showFullImage} from '@site/src/clientUtils';
 import React, {Component} from 'react'
 import GalleryCaption, {ENUMS as CAP_ENUMS} from '../GalleryCaption';
 import GalleryImage, {ENUMS} from '../GalleryImage';
@@ -41,7 +41,7 @@ export class ScrollImage extends GalleryImage {
   }
 
   onScroll = (el) => {
-    const range = document.documentElement.clientHeight;
+    const range = getClientHeight();
     const sibling = this.figure.nextElementSibling.getBoundingClientRect();
     const travel = range - sibling.top;
     if (!this.state.isFirst) { // Skip the opacity change if this if the first image in the gallery

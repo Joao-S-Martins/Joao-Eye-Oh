@@ -1,5 +1,4 @@
-import Masonry from 'masonry-layout';
-import React, {Component, useLayoutEffect} from 'react';
+import React, {useLayoutEffect} from 'react';
 
 import styles from './styles.module.scss';
 
@@ -7,14 +6,15 @@ export default function MasonryGallery(props) {
   let ref = React.createRef();
 
   useLayoutEffect(() => {
+    const Masonry = require('masonry-layout');
     const opts = {
       itemSelector: `.${styles.gridItem}`,
       columnWidth: `.${styles.gridSizer}`,
       gutter: `.${styles.gutterSizer}`,
       percentPosition: true
     };
-    const msnry = new Masonry(ref, opts);
-    const resizeObserver = new ResizeObserver(() => {msnry.layout()});
+    const mason = new Masonry(ref, opts);
+    const resizeObserver = new ResizeObserver(() => {mason.layout()});
     resizeObserver.observe(ref.parentElement);
   });
 

@@ -78,8 +78,9 @@ export class ScrollImage extends GalleryImage {
     return (
       <>
         <GalleryImage {...this.props} ref={el => this.figure = el ? el.figure : null} variant={ENUMS.VARIANTS.FILL} />
-        <figcaption>{this.props.children}</figcaption>
-        <div ref={el => this.space = el} className={styles.scrollSpace} />
+        { !!this.props.children ?
+          <figcaption>{this.props.children}</figcaption> : ''
+        }
       </>
     )
   }

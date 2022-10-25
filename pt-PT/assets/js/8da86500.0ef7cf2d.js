@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjoao_eye_oh=self.webpackChunkjoao_eye_oh||[]).push([[6017],{7931:o=>{o.exports=JSON.parse('{"permalink":"/Joao-Eye-Oh/pt-PT/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

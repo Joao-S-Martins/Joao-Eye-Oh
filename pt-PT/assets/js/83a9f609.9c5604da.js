@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_joao_eye_oh=self.webpackChunk_joao_eye_oh||[]).push([[3261],{2956:o=>{o.exports=JSON.parse('{"permalink":"/Joao-Eye-Oh/pt-PT/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

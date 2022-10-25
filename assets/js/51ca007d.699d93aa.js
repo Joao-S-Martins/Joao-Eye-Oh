@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjoao_eye_oh=self.webpackChunkjoao_eye_oh||[]).push([[8221],{3769:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);

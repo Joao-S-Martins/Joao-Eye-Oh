@@ -29,14 +29,6 @@ const config = {
 
   presets: [
     [
-      '@docusaurus/plugin-ideal-image',
-      {
-        disableInDev: false,
-        sizes: [480, 800, 1020, 1280],
-        quality: 85,
-      },
-    ],
-    [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
@@ -158,7 +150,17 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-    plugins: ['docusaurus-plugin-sass'],
+    plugins: [
+      [
+        '@docusaurus/plugin-ideal-image',
+        {
+          disableInDev: false,
+          sizes: [480, 800, 1020, 1280],
+          quality: 85,
+        },
+      ],
+      'docusaurus-plugin-sass'
+    ]
 };
 
 module.exports = config;

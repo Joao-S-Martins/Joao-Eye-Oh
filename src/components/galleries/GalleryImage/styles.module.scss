@@ -39,6 +39,9 @@
   display: inline-flex;
   margin: 0;
   position: relative;
+  // svg {
+  //   display: none;
+  // }
   &Inline {
     @extend .figure;
   }

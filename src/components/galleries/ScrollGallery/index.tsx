@@ -1,7 +1,7 @@
 import {addScrollListener, getAspectRatio, getClientHeight, showFullImage} from '@site/src/clientUtils';
 import React, {Component} from 'react'
-import GalleryCaption, {ENUMS as CAP_ENUMS} from '../GalleryCaption';
-import GalleryImage, {ENUMS} from '../GalleryImage';
+import GalleryCaption, {ENUMS as CAP_ENUMS} from '@site/src/components/galleries/GalleryCaption';
+import GalleryImage, {ENUMS} from '@site/src/components/galleries/GalleryImage';
 
 import styles from './styles.module.scss';
 

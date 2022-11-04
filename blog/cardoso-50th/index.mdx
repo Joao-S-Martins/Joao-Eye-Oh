@@ -1,0 +1,65 @@
+---
+draft: false
+hide_table_of_contents: true
+hide_title: true
+images: ./img/img-11.jpg
+keywords: [anniversary, party, cardoso, viola da terra, cake]
+sidebar_label: Cardoso 50th
+title: Cardoso Vowl Renewal
+---
+
+import GalleryCaption, {ENUMS as CAP_ENUMS} from '@site/src/components/galleries/GalleryCaption';
+import GalleryImage, {ENUMS as IMG_ENUMS} from '@site/src/components/galleries/GalleryImage';
+import IMGS from './img';
+import MasonryGallery from '@site/src/components/galleries/MasonryGallery';
+import {ScrollCaption, ScrollImage, ScrollGallery} from '@site/src/components/galleries/ScrollGallery';
+import SideImage from '@site/src/components/galleries/SideImage';
+import VIDS from './vid';
+
+<GalleryImage alt="Roses and glassware on a set table" src={IMGS[0]} variant={IMG_ENUMS.VARIANTS.FILL} />
+
+<!--truncate-->
+<GalleryImage alt="Glassware and table settings" src={IMGS[3]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage alt="Collection of tables and alter set for mass" src={IMGS[4]} variant={IMG_ENUMS.VARIANTS.WINDOW} />
+<MasonryGallery>
+  <GalleryImage alt="Roses on the alter" src={IMGS[1]} />
+  <GalleryImage alt="Crucifix on the alter" src={IMGS[2]} />
+  <GalleryImage alt="Joe and Leonilda sitting" src={IMGS[5]} />
+  <GalleryImage alt="Joao and Michael playing violas da terra" src={IMGS[7]} />
+  <GalleryImage alt="Joe placing a ring on Leonilda's finger" src={IMGS[6]} />
+</MasonryGallery>
+<SideImage alt="Joe and Leonilda standing" src={IMGS[8]}>
+  <div className="center square-brackets-quote">
+    <blockquote>
+      <p>My sisters and I would like to congratulate our parents on 50 years of marriage!</p>
+      <p>We have been absolutely blessed to have them both as our parents.</p>
+      <p>Growing up they taught us that marriage is hard work. As much as that is a cliché, it the truth. Our parents always made sure to make that clear to us.</p>
+      <p>They gave us such a priceless example of true unconditional love and commitment to one another. They showed us how to work together in a partnership, to compromise, sacrifice, to have determination and support one another. To make time for one another and our families. They taught us that love is not merely a word or phrase we tell one another but love is shown by actions.</p>
+      <p>As a parent now, I strive to instill the same moral compass and qualities in my children that you both taught us.</p>
+      <p>In three days Joao and I are celebrating 14 years of marriage... we could have been closer to 20 years but my parents told me they wouldn't pay my tuition if I moved out, so 14 it is!</p>
+      <p>I pray the example you provided us helps me and my sisters all get to 50 years of marriage and that this legacy continues to your grandkids.</p>
+      <cite>Raquelle Martins</cite>
+    </blockquote>
+  </div>
+</SideImage>  
+<GalleryImage alt="The Cardosos first dance" src={VIDS[0]} variant={IMG_ENUMS.VARIANTS.FULL} />
+<GalleryImage alt="A lit Cardoso sign" src={IMGS[10]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage alt="A golden butterfly decoration" src={IMGS[11]} variant={IMG_ENUMS.VARIANTS.SCROLL} />
+<GalleryImage alt="The Martins ladies dancing" src={VIDS[2]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage alt="The 50th anniversary cake" src={IMGS[9]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage alt="The Cardosos and their heirs standing behind the cake" src={IMGS[12]} variant={IMG_ENUMS.VARIANTS.FULL} />
+<GalleryImage alt="The Martins family standing" src={IMGS[13]} variant={IMG_ENUMS.VARIANTS.FULL} />
+<ScrollGallery>
+  <ScrollImage alt="Aliciana feeding Mia" src={IMGS[15]} />
+  <ScrollCaption>Aliciana asked for a baby sister after this.</ScrollCaption>
+  <ScrollImage alt="The Cardosos opening the large dessert table" src={IMGS[14]} />
+  <ScrollImage alt="The Cardosos cutting the cake" src={IMGS[16]} />
+</ScrollGallery>
+<GalleryImage alt="The Cardosos sharing cake" src={VIDS[1]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage alt="Grandma Noelia surrounded by her grandchildren" src={IMGS[17]} variant={IMG_ENUMS.VARIANTS.FULL}>
+  <GalleryCaption
+    position={`${CAP_ENUMS.POSITIONS.BOTTOM} ${CAP_ENUMS.POSITIONS.CENTER}`}
+    variant={CAP_ENUMS.VARIANTS.SNAP}>
+      All of Noelia's grandkids and their spouses
+  </GalleryCaption>
+</GalleryImage>

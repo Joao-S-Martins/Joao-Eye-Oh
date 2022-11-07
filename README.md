@@ -43,7 +43,7 @@ $ USE_SSH=true npm run deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
-View the site at [https://joao-s-martins.github.io/Joao-Eye-Oh/](https://joao-s-martins.github.io/Joao-Eye-Oh/).
+View the site at [https://joao-s-martins.github.io/Joao-Eye-Oh/](https://joao-s-martins.github.io/Joao-Eye-Oh/). If there seems to be an issue, check the [deployment page](https://github.com/Joao-S-Martins/Joao-Eye-Oh/deployments).
 
 ### Ideal Image
 

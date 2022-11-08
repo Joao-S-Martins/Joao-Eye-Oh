@@ -13,7 +13,8 @@ export default class GalleryImage extends Component {
       imgW: 0,
       isSet,
       orientation: '',
-      url: isSet ? props.src.preSrc : props.src,
+      // url: isSet ? props.src.preSrc : props.src,
+      url: isSet ? props.src.src.images[props.src.src.images.length - 1].path : props.src, // HACK (joao) Figure out why react isn't updating with new URL
       zoom: 100
     };
   }

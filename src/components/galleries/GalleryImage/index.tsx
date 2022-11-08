@@ -36,7 +36,7 @@ export default class GalleryImage extends Component {
   onLoad = ({target}) => {
     const {naturalHeight: imgH, currentSrc, naturalWidth: imgW} = target;
     this.setState({imgH, imgW, orientation: this.getOrientation(imgW, imgH), url: currentSrc});
-    console.info(`Loaded ${currentSrc}`); // DEBUG (joao)
+    this.forceUpdate();
   };
 
   render() {
@@ -51,12 +51,6 @@ export default class GalleryImage extends Component {
     const testSrc = !this.state.isSet ? src : src.src.src;
     const isVid = testSrc.includes('.webm', testSrc.length -5)
 
-    const getUrl = url => {
-      this.setState({url: url.src});
-      console.info(`getUrl: ${url.src}`); // DEBUG (joao)
-      return url;
-    }
-
     return (
       <figure
         className={styles[`figure${className}`]}
@@ -66,8 +60,8 @@ export default class GalleryImage extends Component {
         {isVid ?
           <video autoPlay className={styles[`vid${className}`]} loop muted preload src={src} /> :
           this.state.isSet ?
-            <img alt={alt} className={styles[`img${className}`]} getUrl={getUrl} onLoad={event => this.onLoad(event)} srcSet={src.src.srcSet} /> :
-            <img alt={alt} className={styles[`img${className}`]} getUrl={getUrl} onLoad={event => this.onLoad(event)} src={src} />
+            <img alt={alt} className={styles[`img${className}`]} onLoad={event => this.onLoad(event)} srcSet={src.src.srcSet} /> :
+            <img alt={alt} className={styles[`img${className}`]} onLoad={event => this.onLoad(event)} src={src} />
         }
         {this.props.children}
       </figure>

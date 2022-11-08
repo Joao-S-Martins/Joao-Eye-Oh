@@ -36,7 +36,7 @@ export default class GalleryImage extends Component {
   onLoad = ({target}) => {
     const {naturalHeight: imgH, currentSrc, naturalWidth: imgW} = target;
     this.setState({imgH, imgW, orientation: this.getOrientation(imgW, imgH), url: currentSrc});
-    console.debug(`Loaded ${currentSrc}`);
+    console.info(`Loaded ${currentSrc}`); // DEBUG (joao)
   };
 
   render() {
@@ -53,6 +53,7 @@ export default class GalleryImage extends Component {
 
     const getUrl = url => {
       this.setState({url: url.src});
+      console.info(`getUrl: ${url.src}`); // DEBUG (joao)
       return url;
     }
 

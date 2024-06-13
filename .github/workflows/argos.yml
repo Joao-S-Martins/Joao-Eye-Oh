@@ -19,7 +19,7 @@ jobs:
           node-version: current
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile && npm install --os=linux --cpu=x64 sharp
+        run: yarn install --frozen-lockfile
 
       - name: Install Playwright browsers
         run: yarn playwright install --with-deps chromium

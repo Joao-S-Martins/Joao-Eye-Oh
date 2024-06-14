@@ -22,5 +22,6 @@ yarn-error.log*
 # Argos
 /screenshots/
 /test-results/
+/tests/playwright/screenshots/
 /playwright-report/
 /playwright/.cache/

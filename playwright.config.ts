@@ -14,6 +14,8 @@ const config: PlaywrightTestConfig = {
       },
     },
   ],
+  testDir: './tests/playwright',
+  snapshotPathTemplate: '{testDir}/screenshots/{arg}{ext}', // {testDir}/screenshots/{testFilePath}/{arg}{ext}
 };
 
 export default config;

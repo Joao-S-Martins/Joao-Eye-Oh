@@ -20,13 +20,16 @@
     "@docusaurus/plugin-sitemap": "^3.0.0",
     "@docusaurus/preset-classic": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
+    "chromium": "^3.0.3",
     "clsx": "^1.2.1",
     "docusaurus-plugin-sass": "^0.2.2",
     "masonry-layout": "^4.2.2",
+    "playwright": "^1.44.1",
     "prism-react-renderer": "^2.1.0",
     "react": "^18.2.2",
     "react-dom": "^18.2.2",
-    "sass": "^1.54.9"
+    "sass": "^1.54.9",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@argos-ci/cli": "^2.1.0",

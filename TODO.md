@@ -23,6 +23,15 @@
 - [ ] Implement [fast-average-color](https://github.com/fast-average-color/fast-average-color) for default backgrounds and text or left/right caption & invert for caption background.
 - [ ] Implement IdealImage or just the algorithm.
 - [ ] Implement [react-update-url-on-scroll](https://github.com/pvoznyuk/react-update-url-on-scroll) to add hashes to URL while scrolling, for easier sharing.
+- [ ] Implement linting to enforce my own consistency
+- [ ] Implement stricter type checking
+- [x] Screenshot regression testing w/ Playwright
+- [ ] Fix Argos CI integration so I don't have to run regression tests locally
+- [ ] Convert React classes to components for gallery objects and whereever it makes sense
+- [x] Upgrade to Docusaurus v3
+- [ ] Create a monorepo where gallery and special components have their own homes
+  - [ ] Create storybooks for the component packages
+  - [ ] Split testing into each appropriate component package
 
 
 ## Bug

@@ -13,7 +13,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "types": "tsc",
-    "lint": "yarn eslint \"./{src,blog,docs}/**/*.{jsx,js,ts,tsx}\""
+    "lint": "yarn eslint \"./{src,blog,docs}/**/*.{jsx,js,ts,tsx}\"",
+    "screenshots": "yarn build && yarn playwright test"
   },
   "dependencies": {
     "@docusaurus/core": "^3.0.0",

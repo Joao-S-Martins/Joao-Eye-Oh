@@ -10,7 +10,7 @@ const config = {
   title: 'Joao Eye Oh',
   tagline: 'Doin\' stuff & making things', /* cspell: disable-line */
   url: 'https://www.joao.io',
-  baseUrl: '/Joao-Eye-Oh/', // TODO (joao) Update to `/` when I route domain name.
+  baseUrl: '/', // TODO Check deploy process and use /Joao-Eye-Oh/ for GitHub Pages
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

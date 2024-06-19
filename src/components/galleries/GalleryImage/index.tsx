@@ -1,28 +1,36 @@
 import {ORIENTATIONS, VARIANTS} from './enums';
-import React, {Component} from 'react'
+import React, { useState, useRef, useEffect, forwardRef } from 'react';
 
 import styles from './styles.module.scss';
 import {showFullImage} from '@site/src/clientUtils';
 
-export default class GalleryImage extends Component {
-  constructor(props) {
-    super(props);
-    const isSet = !!props.src.src;
-    this.state = {
-      imgH: 0,
-      imgW: 0,
-      isSet,
-      orientation: '',
-      // url: isSet ? props.src.preSrc : props.src,
-      url: isSet ? props.src.src.images[props.src.src.images.length - 1].path : props.src, // HACK (joao) Figure out why react isn't updating with new URL
-      zoom: 100
-    };
-  }
+interface GalleryImageProps {
+  alt?: string;
+  src: any;
+  variant?: string;
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  children?: React.ReactNode;
+}
 
-  getOrientation = (w, h) => {
+const GalleryImage = forwardRef<HTMLElement, GalleryImageProps>((props, ref) => {
+  const { alt, src, variant = VARIANTS.INLINE } = props;
+  const isSet = !!src.src;
+  const [state, setState] = useState({
+    imgH: 0,
+    imgW: 0,
+    isSet,
+    orientation: '',
+    url: isSet ? src.src.images[src.src.images.length - 1].path : src,
+    zoom: 100
+  });
+
+  useEffect(() => {
+  }, [ref?.current]);
+
+  const getOrientation = (w, h) => {
     switch (true) {
-      case !!this.state.orientation:
-        return this.state.orientation;
+      case !!state.orientation:
+        return state.orientation;
       case (w > h):
         return ORIENTATIONS.LANDSCAPE;
       case (w < h):
@@ -32,45 +40,41 @@ export default class GalleryImage extends Component {
     }
   }
 
-  onClick = event => this.props.onClick ? this.props.onClick(event) : showFullImage(this.state.url);
+  const onClick = event => props.onClick ? props.onClick(event) : showFullImage(state.url);
 
-  onLoad = ({target}) => {
+  const onLoad = ({target}) => {
     const {naturalHeight: imgH, currentSrc, naturalWidth: imgW} = target;
-    this.setState({imgH, imgW, orientation: this.getOrientation(imgW, imgH), url: currentSrc});
-    this.forceUpdate();
+    setState(prevState => ({...prevState, imgH, imgW, orientation: getOrientation(imgW, imgH), url: currentSrc}));
   };
 
-  render() {
-    const {alt, src, variant = VARIANTS.INLINE} = this.props;
-    const orientation = this.state.orientation || ORIENTATIONS.LANDSCAPE;
-
-    let className = `${variant.charAt(0).toUpperCase() + variant.slice(1)}`;
-    if (variant.includes('left') || variant.includes('right')) {
-      className += (orientation.charAt(0).toUpperCase() + orientation.slice(1));
-    }
-
-    const testSrc = !this.state.isSet ? src : src.src.src;
-    const isVid = testSrc.includes('.webm', testSrc.length -5)
-
-    return (
-      <figure
-        className={styles[`figure${className}`]}
-        ref={el => this.figure = el}
-        onClick={event => this.onClick(event)}
-        style={{backgroundImage: `url(${this.state.url})`}}>
-        {isVid ?
-          <video autoPlay className={styles[`vid${className}`]} loop muted preload src={src} /> :
-          this.state.isSet ?
-            <img alt={alt} className={styles[`img${className}`]} onLoad={event => this.onLoad(event)} srcSet={src.src.srcSet} /> :
-            <img alt={alt} className={styles[`img${className}`]} onLoad={event => this.onLoad(event)} src={src} />
-        }
-        {this.props.children}
-      </figure>
-    );
+  let className = `${variant.charAt(0).toUpperCase() + variant.slice(1)}`;
+  if (variant.includes('left') || variant.includes('right')) {
+    className += (state.orientation.charAt(0).toUpperCase() + state.orientation.slice(1));
   }
-}
+
+  const testSrc = !state.isSet ? src : src.src.src;
+  const isVid = testSrc.includes('.webm', testSrc.length -5)
+
+  return (
+    <figure
+      className={styles[`figure${className}`]}
+      ref={ref}
+      onClick={onClick}
+      style={{backgroundImage: `url(${state.url})`}}>
+      {isVid ?
+        <video autoPlay className={styles[`vid${className}`]} loop muted preload src={src} /> :
+        state.isSet ?
+          <img alt={alt} className={styles[`img${className}`]} onLoad={onLoad} srcSet={src.src.srcSet} /> :
+          <img alt={alt} className={styles[`img${className}`]} onLoad={onLoad} src={src} />
+      }
+      {props.children}
+    </figure>
+  );
+});
 
 export const ENUMS = {
   ORIENTATIONS,
   VARIANTS
 };
+
+export default GalleryImage;

@@ -4,11 +4,14 @@
 - [ ] Social links in the footer.
 - [ ] Explore [hero size](https://css-tricks.com/fun-tip-use-calc-to-change-the-height-of-a-hero-component/_) changes based on viewport size.
 - [ ] Create hero header, maybe with [fixed video](http://jsfiddle.net/V74WH/4/).
-- [ ] Add contest to root for state (like sidebar open) and sizes (like nav hight).
+- [ ] Add content to root for state (like sidebar open) and sizes (like nav hight).
 - [ ] Restyle home page
 - [ ] Restyle header
 - [ ] SEO header experiments
 - [ ] Restyle blog list view
+- [ ] Update deployment to Cloudflare or similar
+- [ ] Point URL at deployment
+- [ ] Remove/hide default blogs and docs
 
 
 ## Feature
@@ -23,6 +26,15 @@
 - [ ] Implement [fast-average-color](https://github.com/fast-average-color/fast-average-color) for default backgrounds and text or left/right caption & invert for caption background.
 - [ ] Implement IdealImage or just the algorithm.
 - [ ] Implement [react-update-url-on-scroll](https://github.com/pvoznyuk/react-update-url-on-scroll) to add hashes to URL while scrolling, for easier sharing.
+- [x] Implement linting to enforce my own consistency
+- [x] Implement stricter type checking
+- [x] Screenshot regression testing w/ Playwright
+- [ ] Fix Argos CI integration so I don't have to run regression tests locally
+- [x] Convert React classes to components for gallery objects and where ever it makes sense
+- [x] Upgrade to Docusaurus v3
+- [ ] Create a monorepo where gallery and special components have their own homes
+  - [ ] Create storybooks for the component packages
+  - [ ] Split testing into each appropriate component package
 
 
 ## Bug

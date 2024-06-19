@@ -1,35 +1,35 @@
-import React, {useLayoutEffect} from 'react';
+import React, {ReactNode, useRef} from 'react';
+import useMasonry from '@site/src/hooks/useMasonry';
 
 import styles from './styles.module.scss';
 
-export default function MasonryGallery(props) {
-  let ref = React.createRef();
+const masonryOpts = {
+  itemSelector: `.${styles.gridItem}`,
+  columnWidth: `.${styles.gridSizer}`,
+  gutter: `.${styles.gutterSizer}`,
+  percentPosition: true
+};
 
-  useLayoutEffect(() => {
-    const Masonry = require('masonry-layout');
-    const opts = {
-      itemSelector: `.${styles.gridItem}`,
-      columnWidth: `.${styles.gridSizer}`,
-      gutter: `.${styles.gutterSizer}`,
-      percentPosition: true
-    };
-    const mason = new Masonry(ref, opts);
-    const resizeObserver = new ResizeObserver(() => {mason.layout()});
-    resizeObserver.observe(ref.parentElement);
-  });
+export type MasonryGalleryProps = {
+  children: ReactNode[];
+}
 
-  const wrap = (img, i) => {
+export default function MasonryGallery(props: MasonryGalleryProps) {
+  const masonRef = useRef(null);
+  useMasonry(masonRef, masonryOpts);
+
+  const wrapChild = (img: ReactNode, i: number) => {
     return (
-      <div class={`${styles.gridItem}${i===0 ? ' ' + styles.gridSizer : ''}`} key={i}>
+      <div className={`${styles.gridItem}${i===0 ? ' ' + styles.gridSizer : ''}`} key={i}>
         {img}
       </div>
     );
   }
 
   return (
-    <div ref={el => ref = el} style={{overflow: 'hidden'}}>
-      {props.children.map(wrap)}
-      <div class={styles.gutterSizer} />
+    <div ref={masonRef} style={{overflow: 'hidden'}}>
+      {props.children.map(wrapChild)}
+      <div className={styles.gutterSizer} />
     </div>
   );
 }

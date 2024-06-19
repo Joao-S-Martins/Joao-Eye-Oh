@@ -1,57 +1,58 @@
 import {VARIANTS} from './enums';
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 
 import styles from './styles.module.scss';
 import {showFullImage} from '@site/src/clientUtils';
 
-export default class SideImage extends Component {
-  constructor(props) {
-    super(props);
-    const isSet = !!props.src.src;
-    this.state = {
-      isSet,
-      url: isSet ? props.src.preSrc : props.src,
-    };
+export type SideImageProps = {
+  alt?: string;
+  src: unknown; // TODO (john) Fix this type
+  variant?: string;
+  onClick?: (event: React.MouseEvent<HTMLImageElement | HTMLVideoElement, MouseEvent>) => void;
+  children?: React.ReactNode;
+}
+
+export default function SideImage(props: SideImageProps) {
+  console.log('src', props.src);
+  const isSet = !!props.src.src;
+  const [url, setUrl] = useState(isSet ? props.src.src : props.src);
+  const {alt, src, variant = VARIANTS.LEFT} = props;
+  const className = `wrap${variant.charAt(0).toUpperCase() + variant.slice(1)}`;
+  const testSrc = !isSet ? src : src.src.src;
+  const isVid = testSrc.includes('.webm', testSrc.length -5)
+
+  const onClick = (event: React.MouseEvent<HTMLImageElement | HTMLVideoElement, MouseEvent>) => props.onClick ? props.onClick(event) : showFull();
+
+  const showFull = () => {
+    showFullImage(url);
   }
 
-  onClick = event => this.props.onClick ? this.props.onClick(event) : this.showFull();
+  // const renderContent = (variant) => {
+  //   const className = `content${variant.charAt(0).toUpperCase() + variant.slice(1)}`;
+  //   return (
+  //     <figcaption className={styles[className]}>
+  //       {props.children}
+  //     </figcaption>
+  //   );
+  // }
 
-  showFull = () => {
-    showFullImage(this.state.url);
+  const onLoad = ({ target }) => {
+    setUrl(target.currentSrc);
   }
 
-  renderContent(variant) {
-    let className = `content${variant.charAt(0).toUpperCase() + variant.slice(1)}`;
-    return (
-      <figcaption className={styles[className]}>
-        {this.props.children}
+  return (
+    <figure className={styles[className]}>
+      {isVid ?
+        <video autoPlay className={styles.vid} loop muted preload="true" onClick={ onClick } src={src} /> :
+        isSet ?
+          <img alt={alt} className={styles.img} onClick={ onClick } onLoad={ onLoad } srcSet={src.src.srcSet} /> :
+          <img alt={alt} className={styles.img} onClick={ onClick } onLoad={ onLoad } src={src} />
+      }
+      <figcaption className={styles.content}>
+        {props.children}
       </figcaption>
-    );
-  }
-
-  onLoad({target}) {
-    this.setState({url: target.currentSrc});
-  }
-
-  render() {
-    const {alt, src, variant = VARIANTS.LEFT} = this.props;
-    const className = `wrap${variant.charAt(0).toUpperCase() + variant.slice(1)}`;
-    const testSrc = !this.state.isSet ? src : src.src.src;
-    const isVid = testSrc.includes('.webm', testSrc.length -5)
-    return (
-      <figure className={styles[className]}>
-        {isVid ?
-          <video autoPlay className={styles.vid} loop muted preload onClick={event => this.onClick(event)} src={src} /> :
-          this.state.isSet ?
-            <img alt={alt} className={styles.img} onClick={event => this.onClick(event)} onLoad={event => this.onLoad(event)} srcSet={src.src.srcSet} /> :
-            <img alt={alt} className={styles.img} onClick={event => this.onClick(event)} onLoad={event => this.onLoad(event)} src={src} />
-        }
-        <figcaption className={styles.content}>
-          {this.props.children}
-        </figcaption>
-      </figure>
-    );
-  }
+    </figure>
+  );
 }
 
 export const ENUMS = {

@@ -36,10 +36,10 @@ This command generates static content into the `build` directory and can be serv
 
 ### Screeshot Testing
 ```
-$ yarn playwright test
+$ yarn screenshots
 ```
 
-Build before testing.
+This will build before testing.
 
 ### Deployment
 

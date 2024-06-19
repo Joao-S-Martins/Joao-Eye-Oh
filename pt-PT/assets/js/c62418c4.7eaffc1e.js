@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjoao_eye_oh=self.webpackChunkjoao_eye_oh||[]).push([[1951],{616:o=>{o.exports=JSON.parse('{"label":"facebook","permalink":"/Joao-Eye-Oh/pt-PT/blog/tags/facebook","allTagsPath":"/Joao-Eye-Oh/pt-PT/blog/tags","count":1}')}}]);

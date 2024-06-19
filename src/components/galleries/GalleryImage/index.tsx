@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import {showFullImage} from '@site/src/clientUtils';
 import { useOrientation } from '@site/src/hooks/useOrientation';
 
-interface GalleryImageProps {
+export type GalleryImageProps = {
   alt?: string;
   src: any;
   variant?: string;

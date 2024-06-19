@@ -4,6 +4,7 @@ import { Options as MasonryOptions } from 'masonry-layout';
 
 function useMasonry(masonRef: RefObject<HTMLElement>, masonryOpts: MasonryOptions) {
   useEffect(() => {
+    /* eslint-disable @typescript-eslint/no-var-requires */
     const Masonry = require('masonry-layout');
     const mason = new Masonry(masonRef.current, masonryOpts);
     const resizeObserver = new ResizeObserver(() => {mason.layout()});

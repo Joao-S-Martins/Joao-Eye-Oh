@@ -17,7 +17,7 @@ export type ScrollCaptionProps = {
 
 export type ScrollImageProps = {
   children: React.ReactNode;
-  src: any;
+  src: unknown; // TODO (john) Fix this type
 }
 
 export function ScrollGallery({children}: ScrollGalleryProps) {
@@ -48,7 +48,7 @@ export function ScrollImage(props: ScrollImageProps) {
   return (
     <>
       <GalleryImage {...props} ref={figure} variant={ENUMS.VARIANTS.FILL} />
-      { !!props.children ?
+      { props.children ?
         <figcaption>{props.children}</figcaption> : ''
       }
     </>

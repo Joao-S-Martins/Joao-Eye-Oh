@@ -1,5 +1,4 @@
-import { useCallback, useEffect } from 'react';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import { useCallback } from 'react';
 import useIsFirstSibling from '../hooks/useIsFirstSibling';
 import useAspectRatio from '../hooks/useAspectRatio';
 import useScrollListener from '../hooks/useScrollLIstener';

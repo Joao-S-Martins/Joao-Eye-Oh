@@ -1,4 +1,4 @@
-import React, {ReactNode, useEffect, useRef} from 'react';
+import React, {ReactNode, useRef} from 'react';
 import useMasonry from '@site/src/hooks/useMasonry';
 
 import styles from './styles.module.scss';
@@ -10,7 +10,11 @@ const masonryOpts = {
   percentPosition: true
 };
 
-export default function MasonryGallery(props) {
+export type MasonryGalleryProps = {
+  children: ReactNode[];
+}
+
+export default function MasonryGallery(props: MasonryGalleryProps) {
   const masonRef = useRef(null);
   useMasonry(masonRef, masonryOpts);
 

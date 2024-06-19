@@ -1,5 +1,5 @@
 import {ORIENTATIONS, VARIANTS} from './enums';
-import React, { useState, useRef, useEffect, forwardRef, useReducer } from 'react';
+import React, { useState, forwardRef } from 'react';
 
 import styles from './styles.module.scss';
 import {showFullImage} from '@site/src/clientUtils';
@@ -7,7 +7,7 @@ import { useOrientation } from '@site/src/hooks/useOrientation';
 
 export type GalleryImageProps = {
   alt?: string;
-  src: any;
+  src: unknown; // TODO (john) Fix this type
   variant?: string;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   children?: React.ReactNode;
@@ -55,5 +55,7 @@ export const ENUMS = {
   ORIENTATIONS,
   VARIANTS
 };
+
+GalleryImage.displayName = 'GalleryImage';
 
 export default GalleryImage;

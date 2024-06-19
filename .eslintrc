@@ -1,10 +1,12 @@
 {
-  "extends": ["plugin:@docusaurus/recommended"],
-  "plugins": ["@docusaurus"],
+  "extends": ["plugin:@docusaurus/recommended", "plugin:react-hooks/recommended"],
+  "plugins": ["@docusaurus", "react-hooks"],
   "rules": {
     "@docusaurus/string-literal-i18n-messages": "warn",
     "@docusaurus/no-untranslated-text": "warn",
     "@docusaurus/no-html-links": "warn",
     "@docusaurus/prefer-docusaurus-heading": "warn",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   }
 }

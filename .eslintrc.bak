@@ -1,5 +1,12 @@
 {
-  "extends": ["plugin:@docusaurus/recommended", "plugin:react-hooks/recommended"],
+  "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+      "browser": true
+      "esmodule": true
+  },
+  "extends": ["eslint:recommended", "plugin:@docusaurus/recommended", "plugin:react-hooks/recommended", "plugin:@typescript-eslint/recommended"],
   "plugins": ["@docusaurus", "react-hooks"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "warn", // TODO Why is this being ignored?

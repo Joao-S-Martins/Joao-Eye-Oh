@@ -25,7 +25,7 @@ export default function GalleryCaption(props: GalleryCaptionProps) {
     const {height, width} = caption.current.getBoundingClientRect();
     setHeight(height);
     setWidth(width);
-  }, [caption.current]);
+  }, [caption]);
 
   const {children, position = `${POSITIONS.MIDDLE} ${POSITIONS.CENTER}`, variant = VARIANTS.ROUNDED} = props;
   const style = {"--caption-height": `${height}px`, "--caption-width": `${width}px`} as React.CSSProperties;

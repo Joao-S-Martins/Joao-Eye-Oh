@@ -6435,12 +6435,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^4.6.2":
-  version: 4.6.2
-  resolution: "eslint-plugin-react-hooks@npm:4.6.2"
+"eslint-plugin-react-hooks@npm:5.1.0-rc-e684ca66ab-20240619":
+  version: 5.1.0-rc-e684ca66ab-20240619
+  resolution: "eslint-plugin-react-hooks@npm:5.1.0-rc-e684ca66ab-20240619"
   peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-  checksum: 10c0/4844e58c929bc05157fb70ba1e462e34f1f4abcbc8dd5bbe5b04513d33e2699effb8bca668297976ceea8e7ebee4e8fc29b9af9d131bcef52886feaa2308b2cc
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
+  checksum: 10c0/015847df2558bcb3d75d89af28b4446336c0bb8df70d0abdaabf6a1372db1b11898641537427336e58acf9832745df3e3321674280a780475321706308d7f055
   languageName: node
   linkType: hard
 
@@ -8876,7 +8876,7 @@ __metadata:
     docusaurus-plugin-sass: "npm:^0.2.2"
     eslint: "npm:9.x"
     eslint-plugin-react: "npm:^7.34.2"
-    eslint-plugin-react-hooks: "npm:^4.6.2"
+    eslint-plugin-react-hooks: "npm:5.1.0-rc-e684ca66ab-20240619"
     globals: "npm:^15.4.0"
     masonry-layout: "npm:^4.2.2"
     playwright: "npm:^1.44.1"

@@ -7,7 +7,7 @@ const useIsFirstSibling = (ref: React.RefObject<HTMLElement | null>) => {
     if (ref.current && ref.current.parentElement) {
       setIsFirst(ref.current.parentElement.firstChild === ref.current);
     }
-  }, [ref.current]);
+  }, [ref]);
 
   return isFirst;
 };

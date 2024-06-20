@@ -19,7 +19,7 @@ const useAspectRatio = (ref: React.RefObject<HTMLElement | null>) => {
         window.removeEventListener('resize', calculateAspectRatio);
       };
     }
-  }, [ref.current]);
+  }, [ref]);
 
   return aspectRatio;
 };

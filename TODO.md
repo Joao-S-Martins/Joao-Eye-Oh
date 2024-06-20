@@ -39,6 +39,8 @@
 
 ## Bug
 - [ ] BUG: GalleryImage background-attachment:fixed & background-size:cover|100% calculates based on browser width, not figure width. Solution may be to set background-size:calc(100% - var(--doc-sidebar-width)|var(--doc-sidebar-hidden-width)) & background-position:right. `main.docMainContainerEnhanced_node_modules-@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module` exists when the side nav is closed.
-- [x] BUG: ScrollGallery doesn't set alpha/zoom when loading. Becomes apparent when refreshing or resizing the page.
+- [ ] BUG: ScrollGallery doesn't set alpha/zoom when loading. Becomes apparent when refreshing or resizing the page.
+- [ ] BUG: ScrollGallery doesn't resize itself with the browser/device.
+- [ ] BUG: Highest resolution image is the only version that loads.
 
 

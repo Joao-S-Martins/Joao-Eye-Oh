@@ -9,8 +9,8 @@ import Translate from '@docusaurus/Translate';
 
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageHeader () {
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -20,11 +20,11 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-              <Translate
-                id="homepage.header.getStarted"
-                description="The homepage header get started button">
-                Docusaurus Tutorial - 5min ⏱️
-              </Translate>
+            <Translate
+              id="homepage.header.getStarted"
+              description="The homepage header get started button">
+              Docusaurus Tutorial - 5min ⏱️
+            </Translate>
           </Link>
         </div>
       </div>
@@ -32,8 +32,8 @@ function HomepageHeader() {
   );
 }
 
-export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+export default function Home (): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}

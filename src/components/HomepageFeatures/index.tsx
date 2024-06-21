@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
           used to get your website up and running quickly.
         </Translate>
       </>
-    ),
+    )
   },
   {
     title: 'Focus on What Matters',
@@ -43,10 +43,11 @@ const FeatureList: FeatureItem[] = [
               description: 'The name of the docs folder'
             })
           }}>
-          { 'Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go ahead and move your docs into the {code} directory.' }
+          { 'Docusaurus lets you focus on your docs, and we&apos;ll do the chores. \
+            Go ahead and move your docs into the {code} directory.' }
         </Translate>
       </>
-    ),
+    )
   },
   {
     title: 'Powered by React',
@@ -60,11 +61,11 @@ const FeatureList: FeatureItem[] = [
           be extended while reusing the same header and footer.
         </Translate>
       </>
-    ),
-  },
+    )
+  }
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature ({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
@@ -78,7 +79,7 @@ function Feature({title, Svg, description}: FeatureItem) {
   );
 }
 
-export default function HomepageFeatures(): JSX.Element {
+export default function HomepageFeatures (): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">

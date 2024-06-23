@@ -37,13 +37,17 @@ const FeatureList: FeatureItem[] = [
           id="homepage.features.focusOnWhatMatters"
           description="The homepage features focus on what matters 2"
           values={{
-            code: translate({
-              id: 'homepage.features.focusOnWhatMatters.code',
-              message: 'docs',
-              description: 'The name of the docs folder'
-            })
+            code: (
+              <code>
+                <Translate
+                  id="homepage.features.focusOnWhatMatters.code"
+                  description="The name of the docs folder">
+                  docs
+                </Translate>
+              </code>
+            ),
           }}>
-          { 'Docusaurus lets you focus on your docs, and we&apos;ll do the chores. \
+          { 'Docusaurus lets you focus on your docs, and we\'ll do the chores. \
             Go ahead and move your docs into the {code} directory.' }
         </Translate>
       </>

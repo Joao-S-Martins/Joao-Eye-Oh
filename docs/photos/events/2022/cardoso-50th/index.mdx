@@ -16,17 +16,17 @@ import {ScrollCaption, ScrollImage, ScrollGallery} from '../../../../../src/comp
 import SideImage from '../../../../../src/components/galleries/SideImage';
 import VIDS from './vid';
 
-<GalleryImage alt="Roses and glassware on a set table" src={IMGS[0]} variant={IMG_ENUMS.VARIANTS.FILL} />
-<GalleryImage alt="Glassware and table settings" src={IMGS[3]} variant={IMG_ENUMS.VARIANTS.FILL} />
-<GalleryImage alt="Collection of tables and alter set for mass" src={IMGS[4]} variant={IMG_ENUMS.VARIANTS.WINDOW} />
+<GalleryImage {...IMGS[0]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage {...IMGS[3]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage {...IMGS[4]} variant={IMG_ENUMS.VARIANTS.WINDOW} />
 <MasonryGallery>
-  <GalleryImage alt="Roses on the alter" src={IMGS[1]} />
-  <GalleryImage alt="Crucifix on the alter" src={IMGS[2]} />
-  <GalleryImage alt="Joe and Leonilda sitting" src={IMGS[5]} />
-  <GalleryImage alt="Joao and Michael playing violas da terra" src={IMGS[7]} />
-  <GalleryImage alt="Joe placing a ring on Leonilda's finger" src={IMGS[6]} />
+  <GalleryImage {...IMGS[1]} />
+  <GalleryImage {...IMGS[2]} />
+  <GalleryImage {...IMGS[5]} />
+  <GalleryImage {...IMGS[7]} />
+  <GalleryImage {...IMGS[6]} />
 </MasonryGallery>
-<SideImage alt="Joe and Leonilda standing" src={IMGS[8]}>
+<SideImage {...IMGS[8]}>
   <div className="center square-brackets-quote">
     <blockquote>
       <p>My sisters and I would like to congratulate our parents on 50 years of marriage!</p>
@@ -40,21 +40,21 @@ import VIDS from './vid';
     </blockquote>
   </div>
 </SideImage>  
-<GalleryImage alt="The Cardosos first dance" src={VIDS[0]} variant={IMG_ENUMS.VARIANTS.FULL} />
-<GalleryImage alt="A lit Cardoso sign" src={IMGS[10]} variant={IMG_ENUMS.VARIANTS.FILL} />
-<GalleryImage alt="A golden butterfly decoration" src={IMGS[11]} variant={IMG_ENUMS.VARIANTS.SCROLL} />
-<GalleryImage alt="The Martins ladies dancing" src={VIDS[2]} variant={IMG_ENUMS.VARIANTS.FILL} />
-<GalleryImage alt="The 50th anniversary cake" src={IMGS[9]} variant={IMG_ENUMS.VARIANTS.FILL} />
-<GalleryImage alt="The Cardosos and their heirs standing behind the cake" src={IMGS[12]} variant={IMG_ENUMS.VARIANTS.FULL} />
-<GalleryImage alt="The Martins family standing" src={IMGS[13]} variant={IMG_ENUMS.VARIANTS.FULL} />
+<GalleryImage {...VIDS[0]} variant={IMG_ENUMS.VARIANTS.FULL} />
+<GalleryImage {...IMGS[10]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage {...IMGS[11]} variant={IMG_ENUMS.VARIANTS.SCROLL} />
+<GalleryImage {...VIDS[2]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage {...IMGS[9]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage {...IMGS[12]} variant={IMG_ENUMS.VARIANTS.FULL} />
+<GalleryImage {...IMGS[13]} variant={IMG_ENUMS.VARIANTS.FULL} />
 <ScrollGallery>
-  <ScrollImage alt="Aliciana feeding Mia" src={IMGS[15]} />
+  <ScrollImage {...IMGS[15]} />
   <ScrollCaption>Aliciana asked for a baby sister after this.</ScrollCaption>
-  <ScrollImage alt="The Cardosos opening the large dessert table" src={IMGS[14]} />
-  <ScrollImage alt="The Cardosos cutting the cake" src={IMGS[16]} />
+  <ScrollImage {...IMGS[14]} />
+  <ScrollImage {...IMGS[16]} />
 </ScrollGallery>
-<GalleryImage alt="The Cardosos sharing cake" src={VIDS[1]} variant={IMG_ENUMS.VARIANTS.FILL} />
-<GalleryImage alt="Grandma Noelia surrounded by her grandchildren" src={IMGS[17]} variant={IMG_ENUMS.VARIANTS.FULL}>
+<GalleryImage {...VIDS[1]} variant={IMG_ENUMS.VARIANTS.FILL} />
+<GalleryImage {...IMGS[17]} variant={IMG_ENUMS.VARIANTS.FULL}>
   <GalleryCaption
     position={`${CAP_ENUMS.POSITIONS.BOTTOM} ${CAP_ENUMS.POSITIONS.CENTER}`}
     variant={CAP_ENUMS.VARIANTS.SNAP}>

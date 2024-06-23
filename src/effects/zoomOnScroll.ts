@@ -14,7 +14,6 @@ export default function zoomOnScroll (elem, aspectRatio, isFirst) {
   }
 
   // Zoom effect while scrolling down the page
-  console.log('!!!!!', 'elem', elem, 'aspectRatio', aspectRatio, 'travel', travel)
   const size = Math.max(Math.min(travel / 50 + 100, 110), 100);
   elem!.style.backgroundSize = aspectRatio > 1 ? `${size}%` : `auto ${size}%`;
 };

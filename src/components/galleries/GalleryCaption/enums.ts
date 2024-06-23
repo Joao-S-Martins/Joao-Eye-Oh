@@ -5,7 +5,7 @@ export const POSITIONS = {
   MIDDLE: 'middle',
   RIGHT: 'right',
   TOP: 'top'
-}
+};
 
 export const VARIANTS = {
   ROUNDED: 'rounded',

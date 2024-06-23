@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
-import GalleryCaption, {ENUMS as CAP_ENUMS} from '@site/src/components/galleries/GalleryCaption';
-import GalleryImage, {ENUMS} from '@site/src/components/galleries/GalleryImage';
+import React, { useRef } from 'react';
+import GalleryCaption, { ENUMS as CAP_ENUMS } from '@site/src/components/galleries/GalleryCaption';
+import GalleryImage, { ENUMS } from '@site/src/components/galleries/GalleryImage';
 
 import styles from './styles.module.scss';
 import useZoomOnScroll from '@site/src/effects/useZoomOnScroll';
@@ -17,10 +17,10 @@ export type ScrollCaptionProps = {
 
 export type ScrollImageProps = {
   children: React.ReactNode;
-  src: unknown; // TODO (john) Fix this type
+  src: any; // TODO (john) Fix this type
 }
 
-export function ScrollGallery({children}: ScrollGalleryProps) {
+export function ScrollGallery ({ children }: ScrollGalleryProps) {
   return (
     <div className={styles.scrollGallery}>
       {children}
@@ -30,18 +30,22 @@ export function ScrollGallery({children}: ScrollGalleryProps) {
   );
 }
 
-export function ScrollCaption(props: ScrollCaptionProps) {
-  const {children, position = CAP_ENUMS.POSITIONS.LEFT, variant = CAP_ENUMS.VARIANTS.ROUNDED} = props;
+export function ScrollCaption (props: ScrollCaptionProps) {
+  const {
+    children,
+    position = CAP_ENUMS.POSITIONS.LEFT,
+    variant = CAP_ENUMS.VARIANTS.ROUNDED
+  } = props;
   return (
     <GalleryCaption
       position={position}
       variant={variant}>
-        {children}
+      {children}
     </GalleryCaption>
   );
 }
 
-export function ScrollImage(props: ScrollImageProps) {
+export function ScrollImage (props: ScrollImageProps) {
   const figure = useRef<HTMLElement | null>(null);
   useZoomOnScroll(figure);
 

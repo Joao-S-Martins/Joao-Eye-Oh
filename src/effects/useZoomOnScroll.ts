@@ -4,7 +4,7 @@ import useAspectRatio from '../hooks/useAspectRatio';
 import useScrollListener from '../hooks/useScrollLIstener';
 
 const useZoomOnScroll = (
-  ref: React.RefObject<HTMLElement | null>,
+  ref: React.RefObject<HTMLElement | null>
 ) => {
   const aspectRatio = useAspectRatio(ref);
   const isFirst = useIsFirstSibling(ref);
@@ -26,7 +26,7 @@ const useZoomOnScroll = (
     // Zoom effect while scrolling down the page
     const size = Math.max(Math.min(travel / 50 + 100, 110), 100);
     ref.current!.style.backgroundSize = aspectRatio > 1 ? `${size}%` : `auto ${size}%`;
-  }, [ref.current]);
+  }, [aspectRatio, isFirst, ref]);
 
   useScrollListener(onScroll, 0);
 };

@@ -47,7 +47,7 @@
     "@playwright/test": "^1.44.1",
     "@types/react": "^18.2.29",
     "cheerio": "^1.0.0-rc.12",
-    "eslint": "9.x",
+    "eslint": "9.5.0",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "5.1.0-rc-e684ca66ab-20240619",
     "globals": "^15.4.0",
